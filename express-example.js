@@ -16,13 +16,13 @@ const logger = createLogger({
         myFormat
     ),
     transports: [
-        new transports.File({ filename: 'server.log' }),
+        new transports.File({ filename: './logs/server.log' }),
     ],
 });
 
 app.get('/', (req, res) => {
     console.log(`request : ${ new Date()}`)
-    logger.info(`request : /}`);
+    logger.info(`request : /`);
     res.send('Hello World!')
 })
 
